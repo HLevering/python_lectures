@@ -7,6 +7,7 @@
 
 def a_function_name(arg1, arg2):
     print(arg1, arg2)
+
 # arg1 and arg2 are parameters. Use don't need to define functions, that take
 # parameters
 # a function is called by writing its name and providing the parameters in
@@ -63,14 +64,14 @@ def keyword_only(*, arg1, arg2, **kwargs):
 
 # arbitrarely keywordarguments are always defined as the last parameter
 
-# keyword_only(1,2) # invalid function call
+#keyword_only(1,2) # invalid function call
 
 # on the other side it is possible to define positional only parameters:
 
-def positional_only(a, b, /):
-    pass
+#def positional_only(a, b, /):
+#    pass
 
-#inavlid  positional_only(a=2, b=4)
+#positional_only(a=2, b=4)
 # positional arguments must be the first parameters in the parameter list
 # followed by a '/'
 # if you define positional arguments, then their names are available as
@@ -106,13 +107,24 @@ def dispatch(arg):
     else:
         return sum
 
-print(dispatch(1)([1,2,3]))
-print(dispatch(0)([1,2,3]))
+#          max/sum
+print( dispatch(1)  ([1,2,3]) )
+print( dispatch(0)  ([1,2,3]) )
 
 # sometimes you want to bind a function to a variable or pass it as a function
 # parameters without declaring the function
 # For this cases we have lambdas
-s = lambda arg1, arg2: arg1 + arg2
+s = lambda arg1, arg2: arg1 + arg2 
+
+
+def greater_2(x):
+    if x>2:
+        return True
+    else:
+        return False
+
+for i in filter(greater_2, [1,2,3,4,5]):
+    print(i)
 # a lambda is defined with the lambda keyword followed by the parameters it
 # takes, a colon ":" and an expression. The result of the expression is the
 # result of the lambda. Because we cannot define any statements in lambda.
@@ -123,6 +135,10 @@ print(s(1,2))
 # The statement "s = lambda arg1, arg2: arg1 + arg2" can be read as:
 # make a function which takes two parameters (arg1 and arg2) and returns the
 # result of the expression arg1 + arg2
+
+d= 3
+dd = 122
+dasdf =df
 
 
 

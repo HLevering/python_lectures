@@ -19,6 +19,17 @@ class B:
     def do(self):
         print("foo")
 
+    def __str__(self):
+        return "Tolle beschreibung von b"
+
+    def __repr__(self):
+        return f"B(a={self.a})"
+
+
+b = B(42)
+s = repr(b)
+print(s)
+
 
 b = B(a)
 
@@ -33,6 +44,13 @@ b = B(a)
 b.do()
 
 # classes can inherit from other classes
+
+class Rad():
+    pass
+
+class Auto:
+    def __init__(self, rad):
+        self.rad = rad
 
 class C(B):
     def do(self):

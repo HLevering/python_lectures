@@ -27,6 +27,10 @@ x=5
 y=x
 x=6
 print("x", x, "y", y)
+l = [x,2,3]
+p = l
+l[0] = [1,2,4]
+print(l,p)
 # Now it should be clear that x is pointing to a new value instead modifying 5
 # in place. Otherwise y would be 6, too.
 # So in other words:
@@ -44,15 +48,16 @@ print("7 // 4", 7//4, "integer division")
 
 # python * / operators have precedence over + - like you would expect it from
 # math
-print( "3 + 2 * 2" , 3+2*2)
+print( "3 + 2 * 2=" , 3+2*2)
 
 # python has a set of builtin types
-a_string = "hello"
+a_string = "hel''lo"
+b_string = 'he"""llo'
 a_special_char_does_not_exist = "c" 
 an_int = 42
 a_float = 1.0
 complex_numbers = 4 + 4j
-#booleans
+# booleans
 a = True
 b = False
 # a null type
@@ -63,10 +68,10 @@ a_list = [1, 2, 3, 4]
 # you can access elements by index with 
 print("first element of list", a_list[0])
 # the first index starts at 0 and the last index is the length of the list -1
-print("length of list", a_list)
+print("length of list", len(a_list))
 print("last element of list", a_list[-1])
-print("slice of a list", a_list[2: 5]) # including element at index 2,
-#excluding index 5
+print("slice of a list", a_list[2: 5])  # including element at index 2,
+# excluding index 5
 
 
 # collection types
@@ -87,14 +92,15 @@ print(a_list)
 # Control flow operators
 for i in range(10):
     print(i)
+    
 
 # python uses indention to define scopes. By convention every scope is indented
 # by 4 whitespaces each. Tabs are not used (so it makes sense to configure your
 # editor to replace a tab by 4 whitespace characters
 for x in range(3):
-    #scope of outer for loop:
+    # scope of outer for loop:
     for y in range(3):
-        #scope of inner for loop:
+        # scope of inner for loop:
         print("x",x, "y", y)
 
 # conditional
@@ -112,7 +118,7 @@ with open("data.txt") as my_file:
 try:
     # an expression that might fail
     5 / 0
-except ZeroDivisionError: 
+except ZeroDivisionError as ex_name: 
     # catch the error. in this case a ZeroDivisionError error and handle it
     print("only Chuck Norris can divide by zero")
 finally:
@@ -120,17 +126,20 @@ finally:
     print("some cleanup which must be done every time")
 
 
-#define a function
+# define a function
 def a_function_name(parameter1, another_parameter):
     # since python is a dynamic language, you do not  have to specify types,
     # but you can (we'll cover this later)
     print(parameter1, another_parameter)
 
-#invoke a function
+
+
+# invoke a function
 a_function_name(3, 4)
 
+import sys
+# define a class
 
-#define a class
 class A:
     def __init__(self, a):
         # self represents an instance of class A
@@ -147,10 +156,18 @@ class A:
         # expects a statement. like in this case ...
         pass
 
-#make an instance of a class
+class B:
+    def my_print(self):
+        pass
+
+
+# make an instance of a class
 my_a = A(100)
-#invoke a method
+my_b = B()
+# invoke a method
 my_a.my_print()
+
+
 # you don't have to pass self as an argument. Self is passed implicitly as the
 # first argument by the python interpreter
 
@@ -233,6 +250,7 @@ class Address:
         self.street_number = street_number
         self.city = city
 
+
 class Person:
     def __init__(self, name, fullname, address, hobbies):
         self.name = name
@@ -240,17 +258,30 @@ class Person:
         self.address = address
         self.hobbies = hobbies
 
-my_person_2 = Person("Brad", "Pitt", Address("Hollywodd", 1, "L.A."),
-        ["acting"])
+    def __repr__(self):
+        return f"Person(name={self.name}, adress={self.address},hobbies={self.hobbies})" 
 
-#2
+
+my_person_2 = Person("Brad", "Pitt", Address("Hollywood", 1, "L.A."),
+        ["acting"])
+print(my_person_2)
+
+
+# 2
 def fib():
     x, y = 1, 1
     numbers = []
-    for i in range(10):
+    for _ in range(10):
         numbers.append(y)
         x, y = x+y, x
     return numbers
+
+
+def diff():
+    dx, dy = dy *0.5, dx*0.25
+
+
+
 print(fib())
              
 

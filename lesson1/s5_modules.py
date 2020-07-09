@@ -3,6 +3,7 @@
 # a file represents a module
 # you can use other modules by importing them
 import math
+
 # python has a whole battery of modules which can be imported
 
 # you can import your own modules
@@ -12,19 +13,22 @@ import a_module
 
 print(a_module.foobar)
 
+
 # it is possible to import only certain definitions
 from a_module import foobar
+print(foobar)
 
 # you can only specify a name, which you use to refer to a definition or module
 import a_module as a
 from a_module import foobar as foo
+print(foo)
 
 # python a lookup scheme for modules
 # it has a var called "PYTHONPATH". This is a list of directories. Every .py
 # file which is in a directory in PYTHONPATH can be imported
 # you can modify PYTHONPATH  by
-#import sys
-#sys.insert("a_path_to_a_dict")
+# import sys
+# sys.insert("a_path_to_a_dict")
 # this would add a_path_to_a_dict to PYTHONPATH
 # This is only shown for completeness and because there are lots of advices
 # like the above one on the internet
@@ -58,7 +62,7 @@ from b_module import c_module
 # numpy -> fast numeric computations
 # scipy -> utility collection for scientific computations
 # sympy -> symbolic math
-# bokeh ->plotting and interactive documents
+# bokeh -> plotting and interactive documents
 # tensorflow ->neuronal networks
 # sklearn -> machine learning
 # fastapi -> restful services
@@ -66,6 +70,7 @@ from b_module import c_module
 # pyqt -> native desktop applications
 # cython -> compile python to native c code
 # pytest -> easy to use unit test framework
+
 
 # before writing your own code, check pypy if there is a python package, which
 # fits your needs, but be careful if you install unkown 3rd party packages

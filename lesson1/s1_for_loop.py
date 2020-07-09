@@ -40,6 +40,7 @@ for i in range(1_000_000):
     if i > 3:
         break
         # the break commands quits a for loop
+
 # On each step the for loop will ask the range object: "give me the next value"
 # and range will calculate and hand over the next value to the for loop without
 # having allocated all 1 mio. elements
@@ -72,11 +73,13 @@ else:
 
 # The for loop is also used in so called list comprehensions
 some_list = [i for i in range(10)]
+print(some_list)
 # some_list == [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 # a list comprehension is a short way to create a list, which is already filled
 # with certain values
 # the same works for dictionaries, too
 my_dict = {i: "some_value" for i in range(3)}
+print(my_dict)
 # my_dict == {0: "some_value", 1: "some_value"}
 
 

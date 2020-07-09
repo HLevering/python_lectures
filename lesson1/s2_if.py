@@ -95,12 +95,14 @@ if  1< a < 5:
 # logical operators will return the value which caused the statement to be True
 # this can be used in a pattern to initialize variables
 x = [] or 4
+print(x)
 # x will be 4
 # or returns the first value which is True
 
 # you can use if statements in other statements and expressions
 # E.g. during assignment
-x = 5 if True else 2
+condition = True
+x = 5 if condition else 2
 # x == 5
 # or in list comprehension
 even_values = [ x for x in range(10) if x % 2 == 0]
